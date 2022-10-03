@@ -1,4 +1,4 @@
-const Product = require('../models/products')
+const Product = require('../models/product')
 
 // bring in seed data
 // const seed = require('../models/seed');
@@ -105,7 +105,7 @@ module.exports = {
     findAllProducts,
     newProduct, 
     createNewProduct, 
-    seedStarterData, 
+    // seedStarterData, 
     showOneProduct, 
     editAProduct, 
     updateAProduct, 

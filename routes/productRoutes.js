@@ -5,7 +5,17 @@ const express = require('express');
 const router = express.Router();
 
 // bring in controller functions (destructure method)
-const { findAllProducts, newProduct, createNewProduct, seedStarterData, showOneProduct, editAProduct, updateAProduct, deleteAProduct, clearData } = require('../controllers/productController')
+const { 
+    findAllProducts, 
+    newProduct, 
+    createNewProduct, 
+    // seedStarterData, 
+    showOneProduct, 
+    editAProduct, 
+    updateAProduct, 
+    deleteAProduct, 
+    clearData 
+} = require('../controllers/productController')
 
 
 // I.N.D.U.C.E.S
@@ -30,7 +40,7 @@ router.post('/', createNewProduct);
 router.get('/:id/edit', editAProduct);
 
 // setup 'seed' route
-router.get('/seed', seedStarterData)
+// router.get('/seed', seedStarterData)
 
 // setup clear route
 router.get('/clear', clearData)

@@ -7,14 +7,14 @@ class Index extends React.Component {
         const { products } = this.props;
 
         return (
-            // <DefaultLayout title="All Fruit" foodGroup="fruits">
+            <DefaultLayout title="Aether Emporium" itemGroup="products">
                 <div>
                     <h1>Products Index</h1>
                     <ul id="products-index">
                         {products.map((product) => {
                             return (
                                 <li key={product._id}>
-                                    placeholder text, will change later.
+                                    <a href={`/products/${product._id}`}>{product.name}</a>
                                 </li>
                             )
                         })}
@@ -25,7 +25,7 @@ class Index extends React.Component {
                         <a href='/products/New'>Add a new product</a>
                     </nav>
                 </div>
-            // </DefaultLayout>
+            </DefaultLayout>
         );
     }
 }
