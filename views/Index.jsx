@@ -1,5 +1,5 @@
 const React = require('react');
-// const DefaultLayout = require('../layouts/DefaultLayout');
+const DefaultLayout = require('./layouts/DefaultLayout');
 
 class Index extends React.Component {
     render() {
@@ -11,10 +11,10 @@ class Index extends React.Component {
                 <div>
                     <h1>Products Index</h1>
                     <ul id="products-index">
-                        {products.map((product) => {
+                        {products?.map((product) => {
                             return (
                                 <li key={product._id}>
-                                    <a href={`/products/${product._id}`}>{product.name}</a>
+                                    <p>Item: <a href={`/products/${product._id}`} id="item-display">{product.name}</a></p>
                                 </li>
                             )
                         })}
@@ -24,7 +24,7 @@ class Index extends React.Component {
                     <nav>
                         <a href='/products/New'>Add a new product</a>
                     </nav>
-                </div>
+                    </div>
             </DefaultLayout>
         );
     }

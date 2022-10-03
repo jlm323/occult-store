@@ -1,6 +1,11 @@
 // load express
 const express = require('express');
 
+const mongoose = require('mongoose');
+
+// bring in mongoConfig function
+const mongoConfig = require('./config');
+
 // create express app
 const app = express();
 
@@ -17,6 +22,10 @@ const port = process.env.PORT;
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
+// middleware
+app.use(express.urlencoded({extended:false}));
+app.use(express.static("public"));
+app.use(express.json());
 
 //app.use
 app.use('/products', productRoutes);
@@ -25,3 +34,6 @@ app.use('/products', productRoutes);
 app.listen(port, () => {
     console.log('listening on port: ', port);
 });
+
+// connect to db
+mongoConfig()

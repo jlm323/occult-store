@@ -10,11 +10,11 @@ const {
     newProduct, 
     createNewProduct, 
     // seedStarterData, 
-    showOneProduct, 
     editAProduct, 
     updateAProduct, 
     deleteAProduct, 
-    clearData 
+    // clearData,
+    showOneProduct,
 } = require('../controllers/productController')
 
 
@@ -43,7 +43,7 @@ router.get('/:id/edit', editAProduct);
 // router.get('/seed', seedStarterData)
 
 // setup clear route
-router.get('/clear', clearData)
+// router.get('/clear', clearData)
 
 // setup show route
 router.get('/:id', showOneProduct);
