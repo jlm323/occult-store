@@ -9,7 +9,7 @@ const findAllProducts = (req, res) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('index', { product: foundProduct })
+            res.status(200).render('index', { products: foundProduct })
         }
     })
 }
@@ -17,6 +17,28 @@ const findAllProducts = (req, res) => {
 // route - GET /products/New (new)
 const newProduct = (req, res) => {
     res.render('new');
+}
+
+// route - DELETE /:id (delete)
+const deleteAProduct = (req, res) => {    
+    Product.findByIdAndDelete(req.params.id, (err, deleteProduct) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect('/products')
+        }
+    })
+}
+
+// route - PUT /:id (update)
+const updateAProduct = (req, res) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, (err, foundProduct) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect(`/products/${req.params.id}`);
+        }
+    })
 }
 
 // route - POST /products (create)
@@ -29,6 +51,28 @@ const createNewProduct = (req, res) => {
         }
     }) 
 }
+
+// route - GET /:id/edit (edit)
+const editAProduct = (req, res) => {
+    Product.findById(req.params.id, (err, foundProduct) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('Edit', { products: foundProduct });
+        }
+    })
+}
+
+// clear data
+// const clearData = (req, res) => {
+//     Product.deleteMany({}, (err, deleteProduct) => {
+//         if (err) {
+//             res.status(400).json(err)
+//         } else {
+//             res.status(200).redirect('/products')
+//         }
+//     })
+// }
 
 // route - GET /products/seed (seed)
 // const seedStarterData = (req, res) => {
@@ -47,68 +91,25 @@ const createNewProduct = (req, res) => {
 //     })
 // }
 
-// route - GET /:id/edit (edit)
-const editAProduct = (req, res) => {
-    Product.findById(req.params.id, (err, foundProduct) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).render('Edit', { product: foundProduct });
-        }
-    })
-}
-
-// route - PUT /:id (update)
-const updateAProduct = (req, res) => {
-    Product.findByIdAndUpdate(req.params.id, req.body, (err, foundProduct) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).redirect(`/products/${req.params.id}`);
-        }
-    })
-}
-
-// route - DELETE /:id (delete)
-const deleteAProduct = (req, res) => {    
-    Product.findByIdAndDelete(req.params.id, (err, deleteProduct) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).redirect('/products')
-        }
-    })
-}
-// clear data
-// const clearData = (req, res) => {
-//     Product.deleteMany({}, (err, deleteProduct) => {
-//         if (err) {
-//             res.status(400).json(err)
-//         } else {
-//             res.status(200).redirect('/products')
-//         }
-//     })
-// }
-
 // route - GET /product/:id (show)
 const showOneProduct = (req, res) => {
     Product.findById(req.params.id, (err, foundProduct) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('Show', { product: foundProduct })
+            res.status(200).render('Show', { products: foundProduct })
         }
     } )
 }
 
 module.exports = {
-    findAllProducts,
+    findAllProducts, 
     newProduct, 
+    deleteAProduct,
+    updateAProduct,
     createNewProduct, 
-    // seedStarterData, 
     editAProduct, 
-    updateAProduct, 
-    deleteAProduct, 
     // clearData,
-    showOneProduct
+    // seedStarterData, 
+    showOneProduct,
 }
