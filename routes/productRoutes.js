@@ -13,7 +13,7 @@ const {
     createNewProduct, 
     editAProduct, 
     // clearData,
-    // seedStarterData, 
+    seedStarterData, 
     showOneProduct,
     buyOneItem
 } = require('../controllers/productController')
@@ -41,7 +41,7 @@ router.post('/', createNewProduct);
 router.get('/:id/edit', editAProduct);
 
 // setup 'seed' route
-// router.get('/seed', seedStarterData)
+router.get('/seed', seedStarterData)
 
 // setup clear route
 // router.get('/clear', clearData)

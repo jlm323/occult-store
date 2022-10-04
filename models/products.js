@@ -11,7 +11,7 @@ const productSchema = new Schema({
     description: { type: String, required: true },
     quantity: { type: Number, required: true},
     price: { type: Number, required: true },
-    // img: { type: String, required: true}
+    img: { type: String}
 })
 
 // create a Model from our Schema

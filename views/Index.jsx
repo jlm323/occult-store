@@ -19,7 +19,9 @@ class Index extends React.Component {
 
                                     <div key={product._id}>
                                         <div className="item-area">
-                                            Item: <a href={`/products/${product._id}`} id="item-display">{product.name}</a>
+                                            <a href={`/products/${product._id}`} id="item-display">
+                                                <img src={`/images/${product.img}`} className="item-photo"/><br/>{product.name}</a><br/>
+                                            ${product.price}
                                         </div>
                                     </div>
                                 )

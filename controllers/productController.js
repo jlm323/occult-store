@@ -1,7 +1,7 @@
 const Product = require('../models/products')
 
 // bring in seed data
-// const seed = require('../models/seed');
+const seed = require('../models/seed');
 
 // route - GET /products (index)
 const findAllProducts = (req, res) => {
@@ -75,21 +75,21 @@ const editAProduct = (req, res) => {
 // }
 
 // route - GET /products/seed (seed)
-// const seedStarterData = (req, res) => {
-//     Product.deleteMany({}, (err, deleteProduct) => {
-//         if (err) {
-//             res.status(400).json(err)
-//         } else {
-//             Product.create(seed.products, (err, createdProduct) => {
-//                 if (err) {
-//                     res.status(400).json(err)
-//                 } else {
-//                     res.status(200).redirect('/products')
-//                 }
-//             })
-//         }
-//     })
-// }
+const seedStarterData = (req, res) => {
+    Product.deleteMany({}, (err, deleteProduct) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            Product.create(seed.products, (err, createdProduct) => {
+                if (err) {
+                    res.status(400).json(err)
+                } else {
+                    res.status(200).redirect('/products')
+                }
+            })
+        }
+    })
+}
 
 // route - GET /product/:id (show)
 const showOneProduct = (req, res) => {
@@ -120,7 +120,7 @@ module.exports = {
     createNewProduct, 
     editAProduct, 
     // clearData,
-    // seedStarterData, 
+    seedStarterData, 
     showOneProduct,
     buyOneItem
 }

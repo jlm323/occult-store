@@ -7,20 +7,23 @@ class Show extends React.Component {
     
         return (
             <DefaultLayout title={`${product.name}`} itemGroup="Products">
-                <h1>Item: {product.name}</h1>
+                <h1>Aether Emporium</h1>
+                <h2>Item: {product.name}</h2>
                 <div id="show-item">
-                    <div className="item-img"></div>
+                    <div className="item-img">
+                    <img src={`/images/${product.img}`} className="show-img"/>
+                    </div>
                     <div className="details">
                         <p>{product.type}</p>
                         <p>{product.description}</p>
-                        <p>Quantity: {product.quantity == 0 ? 'OUT OF STOCK' : product.quantity}</p>
                         <p>Price: ${product.price} USD</p>
+                        <p>Quantity: {product.quantity == 0 ? 'OUT OF STOCK' : product.quantity}</p>
                         
                         { product.quantity > 0 ?
                         <form action={`/products/${product._id}/purchase?_method=PUT`} method="POST">                        
-                        <button type="submit" value="buy">
-                            BUY
-                        </button>
+                            <button type="submit" value="buy">
+                                BUY
+                            </button>
                         </form> : ''}
                     </div>
                 </div>
