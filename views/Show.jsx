@@ -4,7 +4,7 @@ const DefaultLayout = require('./layouts/DefaultLayout')
 class Show extends React.Component {
     render() {
         const { product } = this.props;
-
+    
         return (
             <DefaultLayout title={`${product.name}`} itemGroup="Products">
                 <h1>Item: {product.name}</h1>
@@ -15,9 +15,13 @@ class Show extends React.Component {
                         <p>{product.description}</p>
                         <p>Quantity: {product.quantity == 0 ? 'OUT OF STOCK' : product.quantity}</p>
                         <p>Price: ${product.price} USD</p>
-                        <button>
+                        
+                        { product.quantity > 0 ?
+                        <form action={`/products/${product._id}/purchase?_method=PUT`} method="POST">                        
+                        <button type="submit" value="buy">
                             BUY
                         </button>
+                        </form> : ''}
                     </div>
                 </div>
              

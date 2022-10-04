@@ -102,6 +102,16 @@ const showOneProduct = (req, res) => {
     } )
 }
 
+const buyOneItem = (req, res) => {
+    Product.findByIdAndUpdate(req.params.id, { $inc: {quantity: -1} }, (err, foundItem) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect(`/products/${req.params.id}`)
+        }
+    })
+}
+
 module.exports = {
     findAllProducts, 
     newProduct, 
@@ -112,4 +122,5 @@ module.exports = {
     // clearData,
     // seedStarterData, 
     showOneProduct,
+    buyOneItem
 }

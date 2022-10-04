@@ -15,6 +15,7 @@ const {
     // clearData,
     // seedStarterData, 
     showOneProduct,
+    buyOneItem
 } = require('../controllers/productController')
 
 
@@ -47,6 +48,9 @@ router.get('/:id/edit', editAProduct);
 
 // setup show route
 router.get('/:id', showOneProduct);
+
+// buy route
+router.put('/:id/purchase', buyOneItem)
 
 
 
