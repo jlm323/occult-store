@@ -7,27 +7,34 @@ class Index extends React.Component {
         const { products } = this.props;
 
         return (
-            <DefaultLayout title="Aether Emporium" itemGroup="products">
-                <div>
-                    <h1>Products Index</h1>
-                    <ul id="products-index">
-                        {products?.map((product) => {
-                            return (
-                                <li key={product._id}>
-                                    <p>Item: <a href={`/products/${product._id}`} id="item-display">{product.name}</a></p>
-                                </li>
-                            )
-                        })}
-                        
-                    </ul>
+            <DefaultLayout title="Aether Emporium" itemGroup="Products">
+                
+                    <h1>Aether Emporium</h1>
+                    <div id="page-container">
+                        <div id="products-index">
 
-                    <nav>
-                        <a href='/products/New'>Add a new product</a>
-                    </nav>
+                            {products.map((product) => {
+
+                                return(
+
+                                    <div key={product._id}>
+                                        <div className="item-area">
+                                            Item: <a href={`/products/${product._id}`} id="item-display">{product.name}</a>
+                                        </div>
+                                    </div>
+                                )
+                            } 
+                        )}                        
+                        </div>
                     </div>
+                    
+                    <nav id="create-item">
+                        <a href='/products/new'>Add a new product</a>
+                    </nav>
+                    
             </DefaultLayout>
         );
-    }
-}
+    };
+};
 
 module.exports = Index;

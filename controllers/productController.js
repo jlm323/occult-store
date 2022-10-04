@@ -58,7 +58,7 @@ const editAProduct = (req, res) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('Edit', { products: foundProduct });
+            res.status(200).render('Edit', { product: foundProduct });
         }
     })
 }
@@ -97,7 +97,7 @@ const showOneProduct = (req, res) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('Show', { products: foundProduct })
+            res.status(200).render('Show', { product: foundProduct })
         }
     } )
 }

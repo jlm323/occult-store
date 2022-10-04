@@ -1,13 +1,16 @@
 const React = require('react');
 const DefaultLayout = require('./layouts/DefaultLayout')
 
-class New extends React.Component {
+class Edit extends React.Component {
     render() {
+
+        const { product } = this.props
+
         return (
-            <DefaultLayout title="Edit A Product" group="Products">
+            <DefaultLayout title="Edit A Product" itemGroup="Products">
             <h1>Edit A Product</h1>
                 <div className="label-color">
-                <form action="/products" method="POST">
+                <form action={`/products/${product._id}?_method=PUT`} method="POST">
                     <label htmlFor='title'>Name: </label>
                     <input type="text" id="name" name="name" defaultValue={product.name}/><br/><br/>
 

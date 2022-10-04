@@ -8,12 +8,12 @@ const router = express.Router();
 const { 
     findAllProducts, 
     newProduct, 
+    deleteAProduct,
+    updateAProduct,
     createNewProduct, 
-    // seedStarterData, 
     editAProduct, 
-    updateAProduct, 
-    deleteAProduct, 
     // clearData,
+    // seedStarterData, 
     showOneProduct,
 } = require('../controllers/productController')
 

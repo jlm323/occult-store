@@ -4,7 +4,7 @@ const DefaultLayout = require('./layouts/DefaultLayout')
 class New extends React.Component {
     render() {
         return (
-            <DefaultLayout title="New Product" group="Products">
+            <DefaultLayout title="New Product" itemGroup="Products">
             <h1>Add A New Product</h1>
                 <div className="label-color">
                 <form action="/products" method="POST">
