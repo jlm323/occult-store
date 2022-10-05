@@ -17,7 +17,7 @@ class Show extends React.Component {
                         <p>{product.type}</p>
                         <p>{product.description}</p>
                         <p>Price: ${product.price} USD</p>
-                        <p>Quantity: {product.quantity == 0 ? 'OUT OF STOCK' : product.quantity}</p>
+                        <p>{product.quantity == 0 ? 'OUT OF STOCK' : product.quantity} In Stock</p>
                         
                         { product.quantity > 0 ?
                         <form action={`/products/${product._id}/purchase?_method=PUT`} method="POST">                        

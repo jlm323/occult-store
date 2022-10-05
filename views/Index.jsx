@@ -18,11 +18,22 @@ class Index extends React.Component {
                                 return(
 
                                     <div key={product._id}>
+
                                         <div className="item-area">
+
                                             <a href={`/products/${product._id}`} id="item-display">
-                                                <img src={`/images/${product.img}`} className="item-photo"/><br/>{product.name}</a><br/>
+
+                                                <img src={`/images/${product.img}`} className="item-photo"/>
+                                                
+                                                <div className="overlay">View Item</div><br/>
+                                                
+                                                {product.name}
+                                                
+                                            </a><br/>
                                             ${product.price}
+
                                         </div>
+
                                     </div>
                                 )
                             } 

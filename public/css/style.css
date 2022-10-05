@@ -1,9 +1,19 @@
 body {
-    background-color:aliceblue;
+    background-color:black;
+    color: white;
+    font-family: 'IM Fell DW Pica';
+}
+
+#top {
+    background-color: gray;
 }
 
 h1, h2 {
     text-align: center;
+}
+
+#nav-title {
+    text-align: left;
 }
 
 #page-container {
@@ -22,13 +32,37 @@ h1, h2 {
 }
 
 .item-area {
-    border: 1px solid blue;
+    position: relative;
+    border: 1px solid gray;
     width: 250px;
     text-align: center;
     margin-left: 60px;
     margin-right: 60px;
     margin-bottom: 100px;
 }
+
+.overlay {
+    position: absolute;
+    bottom: 100px;
+    background-color: rgba(248, 248, 248, 0.397);
+    width: 100%;
+    transition: .5s ease;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    opacity: 0;
+}
+
+.item-area:hover .overlay{
+    opacity: 1;
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+
 
 #show-item {
     display: flex;
@@ -38,7 +72,7 @@ h1, h2 {
 }
 
 .show-img {
-    max-width: 300;
+    max-width: 300px;
     max-height: 300px;
 }
 
@@ -51,8 +85,9 @@ h1, h2 {
 
 .details {
     width: 300px;
-    border: 1px solid red;
     margin-left: 100px;
+    font-family: 'IM Fell DW Pica';
+    background-color: black;
 }
 
 .item-photo {
