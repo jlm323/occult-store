@@ -9,7 +9,7 @@ const findAllProducts = (req, res) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('index', { products: foundProduct })
+            res.status(200).render('Index', { products: foundProduct })
         }
     })
 }

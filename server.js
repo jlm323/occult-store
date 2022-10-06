@@ -16,7 +16,7 @@ const productRoutes = require('./routes/productRoutes');
 require('dotenv').config()
 
 // port
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // setup view engine
 app.set('view engine', 'jsx');
