@@ -41,5 +41,5 @@ Images and description credits:
 This project was built for the second module in the Software Engineering course at Per Scholas.
 
 ## Link
-[Visit Aether Emporium](https://aether-emporium.cyclic.app/ "Store")
+[Visit Aether Emporium](https://aether-emporium.cyclic.app/products "Store")
 
