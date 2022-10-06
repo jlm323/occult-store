@@ -6,8 +6,8 @@ class New extends React.Component {
         return (
             <DefaultLayout title="New Product" itemGroup="Products">
             <h1>Add A New Product</h1>
-                <div className="label-color">
-                <form action="/products" method="POST">
+                <div className="form-container">
+                <form action="/products" method="POST" autoComplete="off">
                     <label htmlFor='title'>Name: </label>
                     <input type="text" id="name" name="name"/><br/><br/>
 
@@ -26,6 +26,7 @@ class New extends React.Component {
                     <input type="submit" value="Create product" id="create-btn"/>
                 </form>
             </div>
+            <div className="back-link"><a href="/products">Back</a></div>
             </DefaultLayout>
         );
     }

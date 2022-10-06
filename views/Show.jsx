@@ -19,22 +19,25 @@ class Show extends React.Component {
                         <p>Price: ${product.price} USD</p>
                         <p>{product.quantity == 0 ? 'OUT OF STOCK' : product.quantity} In Stock</p>
                         
+                        <div className="btn-container-1">
                         { product.quantity > 0 ?
                         <form action={`/products/${product._id}/purchase?_method=PUT`} method="POST">                        
-                            <button type="submit" value="buy">
-                                BUY
+                            <button type="submit" value="buy" className="buy-btn">
+                                Buy
                             </button>
                         </form> : ''}
                         </div>
+                        </div>
                     </div>
                 </div>
-             
-                <a href={`/products/${product._id}/edit`}>Edit</a>
+                <div className="btn-container-2">
+                <a href={`/products/${product._id}/edit`}>
+                    <button className="edit-btn-1">Edit</button></a>
 
                 <form action={`/products/${product._id}?_method=DELETE`} method="POST">
-                    <input type="submit" value="Delete"/>
+                    <input type="submit" value="Delete" className="del-btn"/>
                 </form><br/>
-                
+                </div>
                     
                     <div className="back-link">
                         <a href="/products">Return to All Products</a>
