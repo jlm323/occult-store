@@ -11,8 +11,10 @@ class DefaultLayout extends React.Component {
                 </head>
                 <body>
                     <nav id="top">
-                        <h1 id="nav-title">Aether Emporium</h1>
-                        <a href={`/${this.props.itemGroup}`}>{this.props.itemGroup}</a>
+                        <div id="header-img">
+                            <h1 id="nav-title">Aether Emporium</h1>
+                        </div>
+                        <a href={`/${this.props.itemGroup}`} className="link">{this.props.itemGroup}</a>
                     </nav>
                     {this.props.children}
                 </body>

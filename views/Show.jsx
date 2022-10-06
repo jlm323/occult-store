@@ -7,14 +7,14 @@ class Show extends React.Component {
     
         return (
             <DefaultLayout title={`${product.name}`} itemGroup="Products">
-                <h1>Aether Emporium</h1>
                 <h2>Item: {product.name}</h2>
                 <div id="show-item">
                     <div className="item-img">
                     <img src={`/images/${product.img}`} className="show-img"/>
                     </div>
                     <div className="details">
-                        <p>{product.type}</p>
+                        <div className="text-description">
+                        <p className="item-type">{product.type}</p>
                         <p>{product.description}</p>
                         <p>Price: ${product.price} USD</p>
                         <p>{product.quantity == 0 ? 'OUT OF STOCK' : product.quantity} In Stock</p>
@@ -25,6 +25,7 @@ class Show extends React.Component {
                                 BUY
                             </button>
                         </form> : ''}
+                        </div>
                     </div>
                 </div>
              
@@ -33,11 +34,11 @@ class Show extends React.Component {
                 <form action={`/products/${product._id}?_method=DELETE`} method="POST">
                     <input type="submit" value="Delete"/>
                 </form><br/>
-                <nav>
+                
                     
-                    <a href="/products" className="back-link">Return to All Products</a>
-                </nav>
-            
+                    <div className="back-link">
+                        <a href="/products">Return to All Products</a>
+                    </div>
             </DefaultLayout>
         );
     }

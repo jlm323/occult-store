@@ -8,32 +8,20 @@ class Index extends React.Component {
 
         return (
             <DefaultLayout title="Aether Emporium" itemGroup="Products">
-                
-                    <h1>Aether Emporium</h1>
                     <div id="page-container">
                         <div id="products-index">
-
                             {products.map((product) => {
-
                                 return(
-
                                     <div key={product._id}>
-
                                         <div className="item-area">
-
                                             <a href={`/products/${product._id}`} id="item-display">
-
                                                 <img src={`/images/${product.img}`} className="item-photo"/>
-                                                
-                                                <div className="overlay">View Item</div><br/>
-                                                
+                                            <div className="overlay">View Item</div><br/>
                                                 {product.name}
-                                                
                                             </a><br/>
                                             ${product.price}
 
                                         </div>
-
                                     </div>
                                 )
                             } 
