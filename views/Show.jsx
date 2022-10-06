@@ -17,7 +17,7 @@ class Show extends React.Component {
                         <p className="item-type">{product.type}</p>
                         <p>{product.description}</p>
                         <p>Price: ${product.price} USD</p>
-                        <p>{product.quantity == 0 ? 'OUT OF STOCK' : product.quantity} In Stock</p>
+                        <p>{product.quantity == 0 ? 'OUT OF STOCK' : product.quantity + ' In Stock'} </p>
                         
                         <div className="btn-container-1">
                         { product.quantity > 0 ?

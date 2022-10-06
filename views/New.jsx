@@ -17,6 +17,9 @@ class New extends React.Component {
                     <label htmlFor='description'>Description: </label>
                     <textarea id="description" name="description"></textarea><br/><br/>
 
+                    <label htmlFor='img'>Image: </label>
+                    <input type="text" id="img" name="img"/><br/><br/>
+
                     <label htmlFor='quantity'>Quantity: </label>
                     <input type="number" id="quantity" name="quantity" placeholder='0' /><br/><br/>
 
