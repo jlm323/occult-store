@@ -23,14 +23,13 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 // middleware
+app.get('/',(req,res) => {
+    res.redirect('/products')
+})
 app.use(express.urlencoded({extended:false}));
 app.use(express.static("public"));
 app.use(express.json());
 app.use(methodOverride("_method"))
-
-app.get('/',(req,res) => {
-    res.redirect("/products")
-})
 
 //app.use
 app.use('/products', productRoutes);
